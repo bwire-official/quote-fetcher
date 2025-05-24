@@ -15,7 +15,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let response = reqwest::get(url).await?.json::<Vec<Quote>>().await?;
 
     if let Some(quote) = response.first() {
-        println!("\"{}\" — {}", quote.q, quote.a); // replaced invalid character with em dash
+        println!("\"{}\" — {}", quote.q, quote.a); 
     } else {
         println!("Could not fetch a quote.");
     }
